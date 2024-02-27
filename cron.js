@@ -2,10 +2,10 @@ import cron from "node-cron";
 import axios from "axios";
 
 const url =
-  "http://localhost:8080/api/v1/product/awake-server";
+  "https://shopwiz-backend.onrender.com/api/v1/product/awake-server";
 
 function startCronJob() {
-  const awakeServer = cron.schedule("* * * * * *", async () => {
+  const awakeServer = cron.schedule("*/12 * * * *", async () => {
     console.log("Starting cron job");
 
     try {
