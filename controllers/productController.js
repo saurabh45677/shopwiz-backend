@@ -110,7 +110,6 @@ export const getProductsController = async (req, res) => {
 //single product retrieval
 
 export const getSingleProductController = async (req, res) => {
-  console.log("hello");
   try {
     const product = await productModels
       .findOne({ slug: req.params.slug })
@@ -436,3 +435,10 @@ export const brainTreePaymentController = async (req, res) => {
     console.log(error);
   }
 };
+
+export const keepServerAwake = async (req, res) => {
+  console.log("keepServerAwake")
+  res.status(200).send({
+    success: true,
+  })
+}

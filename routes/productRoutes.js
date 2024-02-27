@@ -17,6 +17,7 @@ import {
   productCategoryController,
   brainTreePaymentController,
   braintreeTokenController,
+  keepServerAwake
 } from "../controllers/productController.js";
 
 const Router = express.Router();
@@ -80,6 +81,8 @@ Router.get("/braintree/token", braintreeTokenController);
 
 //payments
 Router.post("/braintree/payment", requireSignIn, brainTreePaymentController);
+
+Router.get('/awake-server', keepServerAwake );
 
 
 export default Router;
